@@ -49,4 +49,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         lastScrollTop = scrollTop;
     });
+
+    // Theme switcher
+    const themeSwitcher = document.getElementById('theme-switcher');
+    themeSwitcher.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        if (document.body.classList.contains('dark-mode')) {
+            themeSwitcher.textContent = '☀️';
+        } else {
+            themeSwitcher.textContent = '🌙';
+        }
+    });
 });

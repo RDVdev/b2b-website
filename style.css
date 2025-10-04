@@ -6,17 +6,53 @@ body {
     background-color: #f0f2f5;
     color: #333;
     overflow-x: hidden;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://www.transparenttextures.com/patterns/cubes.png');
 }
 
 /* Header and Navigation */
 header {
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    transition: top 0.3s;
+    transition: top 0.3s, background-color 0.3s;
+}
+
+body.dark-mode header {
+    background-color: rgba(18, 18, 18, 0.8);
+}
+
+body.dark-mode .logo {
+    color: #00aaff;
+}
+
+body.dark-mode nav ul li a {
+    color: #e0e0e0;
+}
+
+body.dark-mode nav ul li a:hover, body.dark-mode nav ul li a.active {
+    color: #00aaff;
+}
+
+#theme-switcher {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #333;
+}
+
+body.dark-mode #theme-switcher {
+    color: #e0e0e0;
 }
 
 nav {

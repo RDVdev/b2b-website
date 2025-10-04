@@ -11,11 +11,12 @@
         <nav>
             <div class="logo">Fintech</div>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="features.html">Features</a></li>
-                <li><a href="careers.html">Careers</a></li>
+                <li><a href="index.html"><i class="icon-home"></i> Home</a></li>
+                <li><a href="about.html"><i class="icon-about"></i> About</a></li>
+                <li><a href="features.html"><i class="icon-features"></i> Features</a></li>
+                <li><a href="careers.html"><i class="icon-careers"></i> Careers</a></li>
             </ul>
+            <button id="theme-switcher">🌙</button>
         </nav>
     </header>
 
@@ -24,33 +25,108 @@
             <h1>Join Our Team</h1>
             <p>We are looking for talented individuals to join our mission. If you are passionate about finance and technology, we would love to hear from you.</p>
 
-            <div class="job-opening">
-                <h2>Senior Quant Analyst</h2>
-                <p>We are seeking a Senior Quant Analyst to develop and implement complex financial models. The ideal candidate will have a strong background in mathematics, statistics, and programming.</p>
+            <div class="job-category">
+                <h2>Quantitative Analyst</h2>
+                <div class="job-opening">
+                    <h3>Senior Quantitative Analyst</h3>
+                    <p>Develop and implement complex financial models. Requires a strong background in mathematics, statistics, and programming. <strong>Referrals: 3 required.</strong></p>
+                </div>
+                <div class="job-opening">
+                    <h3>Junior Quantitative Analyst</h3>
+                    <p>Assist in the development and validation of financial models. <strong>Referrals: 1 required.</strong></p>
+                </div>
+                <div class="job-opening">
+                    <h3>Quantitative Analyst Intern</h3>
+                    <p>Support the quantitative analysis team with data collection and model testing. <strong>Referrals: Not required.</strong></p>
+                </div>
+            </div>
 
-                <div class="container">
-                    <h3>Submit Your Resume</h3>
-                    <p>Please upload a PDF resume for the Senior Quant Analyst role.</p>
+            <div class="job-category">
+                <h2>Financial Risk Analyst</h2>
+                <div class="job-opening">
+                    <h3>Senior Financial Risk Analyst</h3>
+                    <p>Lead risk assessment and management projects. Extensive experience with market and credit risk is required. <strong>Referrals: 3 required.</strong></p>
+                </div>
+                <div class="job-opening">
+                    <h3>Junior Financial Risk Analyst</h3>
+                    <p>Analyze and monitor financial risks. <strong>Referrals: 1 required.</strong></p>
+                </div>
+                <div class="job-opening">
+                    <h3>Financial Risk Analyst Intern</h3>
+                    <p>Assist with risk reporting and analysis. <strong>Referrals: Not required.</strong></p>
+                </div>
+            </div>
 
-                    <form
-                        action="https://groot-ji.app.n8n.cloud/webhook-test/2ef8d7e1-7568-43d0-b217-f2dc9d20fbfc"
-                        method="POST"
-                        enctype="multipart/form-data">
+            <div class="job-category">
+                <h2>Data Analyst</h2>
+                <div class="job-opening">
+                    <h3>Senior Data Analyst</h3>
+                    <p>Design and implement data analysis solutions to drive business decisions. <strong>Referrals: 3 required.</strong></p>
+                </div>
+                <div class="job-opening">
+                    <h3>Junior Data Analyst</h3>
+                    <p>Perform data analysis and generate reports. <strong>Referrals: 1 required.</strong></p>
+                </div>
+                <div class="job-opening">
+                    <h3>Data Analyst Intern</h3>
+                    <p>Support the data team with data cleaning and visualization. <strong>Referrals: Not required.</strong></p>
+                </div>
+            </div>
 
-                        <label for="resumeFile">Select PDF Resume:</label>
-                        <input
-                            type="file"
-                            id="resumeFile"
-                            name="data"
-                            accept=".pdf"
-                            required>
+            <div class="job-category">
+                <h2>Investment Banking Analyst</h2>
+                <div class="job-opening">
+                    <h3>Senior Investment Banking Analyst</h3>
+                    <p>Lead deal execution and client management. <strong>Referrals: 3 required.</strong></p>
+                </div>
+                <div class="job-opening">
+                    <h3>Junior Investment Banking Analyst</h3>
+                    <p>Support M&A and capital raising activities. <strong>Referrals: 1 required.</strong></p>
+                </div>
+                <div class="job-opening">
+                    <h3>Investment Banking Analyst Intern</h3>
+                    <p>Assist with financial modeling and market research. <strong>Referrals: Not required.</strong></p>
+                </div>
+            </div>
 
-                        <input type="submit" value="Analyze Resume with Gemini AI">
-                    </form>
+            <div class="job-category">
+                <h2>Data Engineer</h2>
+                <div class="job-opening">
+                    <h3>Senior Data Engineer</h3>
+                    <p>Design and build scalable data pipelines. <strong>Referrals: 3 required.</strong></p>
+                </div>
+                <div class="job-opening">
+                    <h3>Junior Data Engineer</h3>
+                    <p>Develop and maintain data infrastructure. <strong>Referrals: 1 required.</strong></p>
+                </div>
+                <div class="job-opening">
+                    <h3>Data Engineer Intern</h3>
+                    <p>Support the data engineering team with pipeline development and testing. <strong>Referrals: Not required.</strong></p>
+                </div>
+            </div>
 
-                    <div class="webhook-info">
-                        Target Webhook (for testing): <code>https://groot-ji.app.n8n.cloud/webhook-test/2ef8d7e1-7568-43d0-b217-f2dc9d20fbfc</code>
-                    </div>
+            <div class="container">
+                <h3>Submit Your Resume</h3>
+                <p>Please upload a PDF resume for the desired role.</p>
+
+                <form
+                    action="https://groot-ji.app.n8n.cloud/webhook-test/2ef8d7e1-7568-43d0-b217-f2dc9d20fbfc"
+                    method="POST"
+                    enctype="multipart/form-data">
+
+                    <label for="resumeFile">Select PDF Resume:</label>
+                    <input
+                        type="file"
+                        id="resumeFile"
+                        name="data"
+                        accept=".pdf"
+                        required>
+
+                    <input type="submit" value="Analyze Resume with Gemini AI">
+                </form>
+
+                <div class="webhook-info">
+                    Target Webhook (for testing): <code>https://groot-ji.app.n8n.cloud/webhook-test/2ef8d7e1-7568-43d0-b217-f2dc9d20fbfc</code>
                 </div>
             </div>
         </section>
