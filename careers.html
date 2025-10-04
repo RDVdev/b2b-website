@@ -17,10 +17,13 @@
         .job-opening { margin-top: 20px; padding: 15px; background-color: #fff; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
         .job-opening h3 { margin: 0 0 5px 0; }
         .job-opening p { margin: 0 0 10px 0; color: #555; }
-        form { display: flex; flex-direction: column; gap: 10px; }
-        input[type="file"] { padding: 10px; border: 1px solid #ccc; border-radius: 4px; width: 100%; }
-        input[type="submit"] { background-color: #007bff; color: white; padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer; font-size: 1em; transition: 0.3s; }
-        input[type="submit"]:hover { background-color: #0056b3; }
+        .form-container { max-width: 600px; margin: 20px auto; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .form-container h1 { color: #333; font-size: 1.5em; border-bottom: 2px solid #ddd; padding-bottom: 10px; }
+        .form-container label { display: block; margin-bottom: 8px; font-weight: bold; color: #555; }
+        .form-container input[type="file"] { margin-bottom: 20px; padding: 10px; border: 1px solid #ccc; border-radius: 4px; display: block; width: 100%; box-sizing: border-box; }
+        .form-container input[type="submit"] { background-color: #007bff; color: white; padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer; font-size: 1em; transition: background-color 0.3s; }
+        .form-container input[type="submit"]:hover { background-color: #0056b3; }
+        .webhook-info { font-size: 0.8em; color: #777; margin-top: 20px; }
         footer { text-align: center; margin-top: 40px; color: #777; }
     </style>
 </head>
@@ -47,34 +50,88 @@
         <div class="job-opening">
             <h3>Senior Quantitative Analyst</h3>
             <p>Develop and implement complex financial models. Referrals: 3 required.</p>
-            <form action="https://groot-ji.app.n8n.cloud/webhook-test/2ef8d7e1-7568-43d0-b217-f2dc9d20fbfc" method="POST" enctype="multipart/form-data">
-                <input type="hidden" name="role" value="Senior Quantitative Analyst">
-                <label>Select PDF Resume:</label>
-                <input type="file" name="data" accept=".pdf" required>
-                <input type="submit" value="Apply Now">
-            </form>
+            <div class="form-container">
+                <h1>Submit Resume to HR AI Agent</h1>
+                <p>Please upload a PDF resume for the Senior Quantitative Analyst role.</p>
+
+                <form
+                    action="https://groot-ji.app.n8n.cloud/webhook-test/2ef8d7e1-7568-43d0-b217-f2dc9d20fbfc"
+                    method="POST"
+                    enctype="multipart/form-data">
+
+                    <label for="resumeFile-senior-quant">Select PDF Resume:</label>
+                    <input
+                        type="file"
+                        id="resumeFile-senior-quant"
+                        name="data"
+                        accept=".pdf"
+                        required>
+
+                    <input type="submit" value="Analyze Resume with Gemini AI">
+                </form>
+
+                <div class="webhook-info">
+                    Target Webhook (for testing): <code>https://groot-ji.app.n8n.cloud/webhook-test/2ef8d7e1-7568-43d0-b217-f2dc9d20fbfc</code>
+                </div>
+            </div>
         </div>
 
         <div class="job-opening">
             <h3>Junior Quantitative Analyst</h3>
             <p>Assist in the development and validation of financial models. Referrals: 1 required.</p>
-            <form action="https://groot-ji.app.n8n.cloud/webhook-test/2ef8d7e1-7568-43d0-b217-f2dc9d20fbfc" method="POST" enctype="multipart/form-data">
-                <input type="hidden" name="role" value="Junior Quantitative Analyst">
-                <label>Select PDF Resume:</label>
-                <input type="file" name="data" accept=".pdf" required>
-                <input type="submit" value="Apply Now">
-            </form>
+            <div class="form-container">
+                <h1>Submit Resume to HR AI Agent</h1>
+                <p>Please upload a PDF resume for the Junior Quantitative Analyst role.</p>
+
+                <form
+                    action="https://groot-ji.app.n8n.cloud/webhook-test/2ef8d7e1-7568-43d0-b217-f2dc9d20fbfc"
+                    method="POST"
+                    enctype="multipart/form-data">
+
+                    <label for="resumeFile-junior-quant">Select PDF Resume:</label>
+                    <input
+                        type="file"
+                        id="resumeFile-junior-quant"
+                        name="data"
+                        accept=".pdf"
+                        required>
+
+                    <input type="submit" value="Analyze Resume with Gemini AI">
+                </form>
+
+                <div class="webhook-info">
+                    Target Webhook (for testing): <code>https://groot-ji.app.n8n.cloud/webhook-test/2ef8d7e1-7568-43d0-b217-f2dc9d20fbfc</code>
+                </div>
+            </div>
         </div>
 
         <div class="job-opening">
             <h3>Quantitative Analyst Intern</h3>
             <p>Support the quantitative analysis team with data collection and model testing. Referrals: Not required.</p>
-            <form action="https://groot-ji.app.n8n.cloud/webhook-test/2ef8d7e1-7568-43d0-b217-f2dc9d20fbfc" method="POST" enctype="multipart/form-data">
-                <input type="hidden" name="role" value="Quantitative Analyst Intern">
-                <label>Select PDF Resume:</label>
-                <input type="file" name="data" accept=".pdf" required>
-                <input type="submit" value="Apply Now">
-            </form>
+            <div class="form-container">
+                <h1>Submit Resume to HR AI Agent</h1>
+                <p>Please upload a PDF resume for the Quantitative Analyst Intern role.</p>
+
+                <form
+                    action="https://groot-ji.app.n8n.cloud/webhook-test/2ef8d7e1-7568-43d0-b217-f2dc9d20fbfc"
+                    method="POST"
+                    enctype="multipart/form-data">
+
+                    <label for="resumeFile-intern-quant">Select PDF Resume:</label>
+                    <input
+                        type="file"
+                        id="resumeFile-intern-quant"
+                        name="data"
+                        accept=".pdf"
+                        required>
+
+                    <input type="submit" value="Analyze Resume with Gemini AI">
+                </form>
+
+                <div class="webhook-info">
+                    Target Webhook (for testing): <code>https://groot-ji.app.n8n.cloud/webhook-test/2ef8d7e1-7568-43d0-b217-f2dc9d20fbfc</code>
+                </div>
+            </div>
         </div>
 
         <!-- Financial Risk Analyst -->
@@ -82,34 +139,88 @@
         <div class="job-opening">
             <h3>Senior Financial Risk Analyst</h3>
             <p>Lead risk assessment and management projects. Referrals: 3 required.</p>
-            <form action="https://groot-ji.app.n8n.cloud/webhook-test/2ef8d7e1-7568-43d0-b217-f2dc9d20fbfc" method="POST" enctype="multipart/form-data">
-                <input type="hidden" name="role" value="Senior Financial Risk Analyst">
-                <label>Select PDF Resume:</label>
-                <input type="file" name="data" accept=".pdf" required>
-                <input type="submit" value="Apply Now">
-            </form>
+            <div class="form-container">
+                <h1>Submit Resume to HR AI Agent</h1>
+                <p>Please upload a PDF resume for the Senior Financial Risk Analyst role.</p>
+
+                <form
+                    action="https://groot-ji.app.n8n.cloud/webhook-test/2ef8d7e1-7568-43d0-b217-f2dc9d20fbfc"
+                    method="POST"
+                    enctype="multipart/form-data">
+
+                    <label for="resumeFile-senior-risk">Select PDF Resume:</label>
+                    <input
+                        type="file"
+                        id="resumeFile-senior-risk"
+                        name="data"
+                        accept=".pdf"
+                        required>
+
+                    <input type="submit" value="Analyze Resume with Gemini AI">
+                </form>
+
+                <div class="webhook-info">
+                    Target Webhook (for testing): <code>https://groot-ji.app.n8n.cloud/webhook-test/2ef8d7e1-7568-43d0-b217-f2dc9d20fbfc</code>
+                </div>
+            </div>
         </div>
 
         <div class="job-opening">
             <h3>Junior Financial Risk Analyst</h3>
             <p>Analyze and monitor financial risks. Referrals: 1 required.</p>
-            <form action="https://groot-ji.app.n8n.cloud/webhook-test/2ef8d7e1-7568-43d0-b217-f2dc9d20fbfc" method="POST" enctype="multipart/form-data">
-                <input type="hidden" name="role" value="Junior Financial Risk Analyst">
-                <label>Select PDF Resume:</label>
-                <input type="file" name="data" accept=".pdf" required>
-                <input type="submit" value="Apply Now">
-            </form>
+            <div class="form-container">
+                <h1>Submit Resume to HR AI Agent</h1>
+                <p>Please upload a PDF resume for the Junior Financial Risk Analyst role.</p>
+
+                <form
+                    action="https://groot-ji.app.n8n.cloud/webhook-test/2ef8d7e1-7568-43d0-b217-f2dc9d20fbfc"
+                    method="POST"
+                    enctype="multipart/form-data">
+
+                    <label for="resumeFile-junior-risk">Select PDF Resume:</label>
+                    <input
+                        type="file"
+                        id="resumeFile-junior-risk"
+                        name="data"
+                        accept=".pdf"
+                        required>
+
+                    <input type="submit" value="Analyze Resume with Gemini AI">
+                </form>
+
+                <div class="webhook-info">
+                    Target Webhook (for testing): <code>https://groot-ji.app.n8n.cloud/webhook-test/2ef8d7e1-7568-43d0-b217-f2dc9d20fbfc</code>
+                </div>
+            </div>
         </div>
 
         <div class="job-opening">
             <h3>Financial Risk Analyst Intern</h3>
             <p>Assist with risk reporting and analysis. Referrals: Not required.</p>
-            <form action="https://groot-ji.app.n8n.cloud/webhook-test/2ef8d7e1-7568-43d0-b217-f2dc9d20fbfc" method="POST" enctype="multipart/form-data">
-                <input type="hidden" name="role" value="Financial Risk Analyst Intern">
-                <label>Select PDF Resume:</label>
-                <input type="file" name="data" accept=".pdf" required>
-                <input type="submit" value="Apply Now">
-            </form>
+            <div class="form-container">
+                <h1>Submit Resume to HR AI Agent</h1>
+                <p>Please upload a PDF resume for the Financial Risk Analyst Intern role.</p>
+
+                <form
+                    action="https://groot-ji.app.n8n.cloud/webhook-test/2ef8d7e1-7568-43d0-b217-f2dc9d20fbfc"
+                    method="POST"
+                    enctype="multipart/form-data">
+
+                    <label for="resumeFile-intern-risk">Select PDF Resume:</label>
+                    <input
+                        type="file"
+                        id="resumeFile-intern-risk"
+                        name="data"
+                        accept=".pdf"
+                        required>
+
+                    <input type="submit" value="Analyze Resume with Gemini AI">
+                </form>
+
+                <div class="webhook-info">
+                    Target Webhook (for testing): <code>https://groot-ji.app.n8n.cloud/webhook-test/2ef8d7e1-7568-43d0-b217-f2dc9d20fbfc</code>
+                </div>
+            </div>
         </div>
 
         <!-- Data Analyst -->
@@ -117,34 +228,88 @@
         <div class="job-opening">
             <h3>Senior Data Analyst</h3>
             <p>Design and implement data analysis solutions to drive business decisions. Referrals: 3 required.</p>
-            <form action="https://groot-ji.app.n8n.cloud/webhook-test/2ef8d7e1-7568-43d0-b217-f2dc9d20fbfc" method="POST" enctype="multipart/form-data">
-                <input type="hidden" name="role" value="Senior Data Analyst">
-                <label>Select PDF Resume:</label>
-                <input type="file" name="data" accept=".pdf" required>
-                <input type="submit" value="Apply Now">
-            </form>
+            <div class="form-container">
+                <h1>Submit Resume to HR AI Agent</h1>
+                <p>Please upload a PDF resume for the Senior Data Analyst role.</p>
+
+                <form
+                    action="https://groot-ji.app.n8n.cloud/webhook-test/2ef8d7e1-7568-43d0-b217-f2dc9d20fbfc"
+                    method="POST"
+                    enctype="multipart/form-data">
+
+                    <label for="resumeFile-senior-data">Select PDF Resume:</label>
+                    <input
+                        type="file"
+                        id="resumeFile-senior-data"
+                        name="data"
+                        accept=".pdf"
+                        required>
+
+                    <input type="submit" value="Analyze Resume with Gemini AI">
+                </form>
+
+                <div class="webhook-info">
+                    Target Webhook (for testing): <code>https://groot-ji.app.n8n.cloud/webhook-test/2ef8d7e1-7568-43d0-b217-f2dc9d20fbfc</code>
+                </div>
+            </div>
         </div>
 
         <div class="job-opening">
             <h3>Junior Data Analyst</h3>
             <p>Perform data analysis and generate reports. Referrals: 1 required.</p>
-            <form action="https://groot-ji.app.n8n.cloud/webhook-test/2ef8d7e1-7568-43d0-b217-f2dc9d20fbfc" method="POST" enctype="multipart/form-data">
-                <input type="hidden" name="role" value="Junior Data Analyst">
-                <label>Select PDF Resume:</label>
-                <input type="file" name="data" accept=".pdf" required>
-                <input type="submit" value="Apply Now">
-            </form>
+            <div class="form-container">
+                <h1>Submit Resume to HR AI Agent</h1>
+                <p>Please upload a PDF resume for the Junior Data Analyst role.</p>
+
+                <form
+                    action="https://groot-ji.app.n8n.cloud/webhook-test/2ef8d7e1-7568-43d0-b217-f2dc9d20fbfc"
+                    method="POST"
+                    enctype="multipart/form-data">
+
+                    <label for="resumeFile-junior-data">Select PDF Resume:</label>
+                    <input
+                        type="file"
+                        id="resumeFile-junior-data"
+                        name="data"
+                        accept=".pdf"
+                        required>
+
+                    <input type="submit" value="Analyze Resume with Gemini AI">
+                </form>
+
+                <div class="webhook-info">
+                    Target Webhook (for testing): <code>https://groot-ji.app.n8n.cloud/webhook-test/2ef8d7e1-7568-43d0-b217-f2dc9d20fbfc</code>
+                </div>
+            </div>
         </div>
 
         <div class="job-opening">
             <h3>Data Analyst Intern</h3>
             <p>Support the data team with data cleaning and visualization. Referrals: Not required.</p>
-            <form action="https://groot-ji.app.n8n.cloud/webhook-test/2ef8d7e1-7568-43d0-b217-f2dc9d20fbfc" method="POST" enctype="multipart/form-data">
-                <input type="hidden" name="role" value="Data Analyst Intern">
-                <label>Select PDF Resume:</label>
-                <input type="file" name="data" accept=".pdf" required>
-                <input type="submit" value="Apply Now">
-            </form>
+            <div class="form-container">
+                <h1>Submit Resume to HR AI Agent</h1>
+                <p>Please upload a PDF resume for the Data Analyst Intern role.</p>
+
+                <form
+                    action="https://groot-ji.app.n8n.cloud/webhook-test/2ef8d7e1-7568-43d0-b217-f2dc9d20fbfc"
+                    method="POST"
+                    enctype="multipart/form-data">
+
+                    <label for="resumeFile-intern-data">Select PDF Resume:</label>
+                    <input
+                        type="file"
+                        id="resumeFile-intern-data"
+                        name="data"
+                        accept=".pdf"
+                        required>
+
+                    <input type="submit" value="Analyze Resume with Gemini AI">
+                </form>
+
+                <div class="webhook-info">
+                    Target Webhook (for testing): <code>https://groot-ji.app.n8n.cloud/webhook-test/2ef8d7e1-7568-43d0-b217-f2dc9d20fbfc</code>
+                </div>
+            </div>
         </div>
 
         <!-- Investment Banking Analyst -->
@@ -152,34 +317,88 @@
         <div class="job-opening">
             <h3>Senior Investment Banking Analyst</h3>
             <p>Lead deal execution and client management. Referrals: 3 required.</p>
-            <form action="https://groot-ji.app.n8n.cloud/webhook-test/2ef8d7e1-7568-43d0-b217-f2dc9d20fbfc" method="POST" enctype="multipart/form-data">
-                <input type="hidden" name="role" value="Senior Investment Banking Analyst">
-                <label>Select PDF Resume:</label>
-                <input type="file" name="data" accept=".pdf" required>
-                <input type="submit" value="Apply Now">
-            </form>
+            <div class="form-container">
+                <h1>Submit Resume to HR AI Agent</h1>
+                <p>Please upload a PDF resume for the Senior Investment Banking Analyst role.</p>
+
+                <form
+                    action="https://groot-ji.app.n8n.cloud/webhook-test/2ef8d7e1-7568-43d0-b217-f2dc9d20fbfc"
+                    method="POST"
+                    enctype="multipart/form-data">
+
+                    <label for="resumeFile-senior-ib">Select PDF Resume:</label>
+                    <input
+                        type="file"
+                        id="resumeFile-senior-ib"
+                        name="data"
+                        accept=".pdf"
+                        required>
+
+                    <input type="submit" value="Analyze Resume with Gemini AI">
+                </form>
+
+                <div class="webhook-info">
+                    Target Webhook (for testing): <code>https://groot-ji.app.n8n.cloud/webhook-test/2ef8d7e1-7568-43d0-b217-f2dc9d20fbfc</code>
+                </div>
+            </div>
         </div>
 
         <div class="job-opening">
             <h3>Junior Investment Banking Analyst</h3>
             <p>Support M&A and capital raising activities. Referrals: 1 required.</p>
-            <form action="https://groot-ji.app.n8n.cloud/webhook-test/2ef8d7e1-7568-43d0-b217-f2dc9d20fbfc" method="POST" enctype="multipart/form-data">
-                <input type="hidden" name="role" value="Junior Investment Banking Analyst">
-                <label>Select PDF Resume:</label>
-                <input type="file" name="data" accept=".pdf" required>
-                <input type="submit" value="Apply Now">
-            </form>
+            <div class="form-container">
+                <h1>Submit Resume to HR AI Agent</h1>
+                <p>Please upload a PDF resume for the Junior Investment Banking Analyst role.</p>
+
+                <form
+                    action="https://groot-ji.app.n8n.cloud/webhook-test/2ef8d7e1-7568-43d0-b217-f2dc9d20fbfc"
+                    method="POST"
+                    enctype="multipart/form-data">
+
+                    <label for="resumeFile-junior-ib">Select PDF Resume:</label>
+                    <input
+                        type="file"
+                        id="resumeFile-junior-ib"
+                        name="data"
+                        accept=".pdf"
+                        required>
+
+                    <input type="submit" value="Analyze Resume with Gemini AI">
+                </form>
+
+                <div class="webhook-info">
+                    Target Webhook (for testing): <code>https://groot-ji.app.n8n.cloud/webhook-test/2ef8d7e1-7568-43d0-b217-f2dc9d20fbfc</code>
+                </div>
+            </div>
         </div>
 
         <div class="job-opening">
             <h3>Investment Banking Analyst Intern</h3>
             <p>Assist with financial modeling and market research. Referrals: Not required.</p>
-            <form action="https://groot-ji.app.n8n.cloud/webhook-test/2ef8d7e1-7568-43d0-b217-f2dc9d20fbfc" method="POST" enctype="multipart/form-data">
-                <input type="hidden" name="role" value="Investment Banking Analyst Intern">
-                <label>Select PDF Resume:</label>
-                <input type="file" name="data" accept=".pdf" required>
-                <input type="submit" value="Apply Now">
-            </form>
+            <div class="form-container">
+                <h1>Submit Resume to HR AI Agent</h1>
+                <p>Please upload a PDF resume for the Investment Banking Analyst Intern role.</p>
+
+                <form
+                    action="https://groot-ji.app.n8n.cloud/webhook-test/2ef8d7e1-7568-43d0-b217-f2dc9d20fbfc"
+                    method="POST"
+                    enctype="multipart/form-data">
+
+                    <label for="resumeFile-intern-ib">Select PDF Resume:</label>
+                    <input
+                        type="file"
+                        id="resumeFile-intern-ib"
+                        name="data"
+                        accept=".pdf"
+                        required>
+
+                    <input type="submit" value="Analyze Resume with Gemini AI">
+                </form>
+
+                <div class="webhook-info">
+                    Target Webhook (for testing): <code>https://groot-ji.app.n8n.cloud/webhook-test/2ef8d7e1-7568-43d0-b217-f2dc9d20fbfc</code>
+                </div>
+            </div>
         </div>
 
         <!-- Data Engineer -->
@@ -187,34 +406,88 @@
         <div class="job-opening">
             <h3>Senior Data Engineer</h3>
             <p>Design and build scalable data pipelines. Referrals: 3 required.</p>
-            <form action="https://groot-ji.app.n8n.cloud/webhook-test/2ef8d7e1-7568-43d0-b217-f2dc9d20fbfc" method="POST" enctype="multipart/form-data">
-                <input type="hidden" name="role" value="Senior Data Engineer">
-                <label>Select PDF Resume:</label>
-                <input type="file" name="data" accept=".pdf" required>
-                <input type="submit" value="Apply Now">
-            </form>
+            <div class="form-container">
+                <h1>Submit Resume to HR AI Agent</h1>
+                <p>Please upload a PDF resume for the Senior Data Engineer role.</p>
+
+                <form
+                    action="https://groot-ji.app.n8n.cloud/webhook-test/2ef8d7e1-7568-43d0-b217-f2dc9d20fbfc"
+                    method="POST"
+                    enctype="multipart/form-data">
+
+                    <label for="resumeFile-senior-de">Select PDF Resume:</label>
+                    <input
+                        type="file"
+                        id="resumeFile-senior-de"
+                        name="data"
+                        accept=".pdf"
+                        required>
+
+                    <input type="submit" value="Analyze Resume with Gemini AI">
+                </form>
+
+                <div class="webhook-info">
+                    Target Webhook (for testing): <code>https://groot-ji.app.n8n.cloud/webhook-test/2ef8d7e1-7568-43d0-b217-f2dc9d20fbfc</code>
+                </div>
+            </div>
         </div>
 
         <div class="job-opening">
             <h3>Junior Data Engineer</h3>
             <p>Develop and maintain data infrastructure. Referrals: 1 required.</p>
-            <form action="https://groot-ji.app.n8n.cloud/webhook-test/2ef8d7e1-7568-43d0-b217-f2dc9d20fbfc" method="POST" enctype="multipart/form-data">
-                <input type="hidden" name="role" value="Junior Data Engineer">
-                <label>Select PDF Resume:</label>
-                <input type="file" name="data" accept=".pdf" required>
-                <input type="submit" value="Apply Now">
-            </form>
+            <div class="form-container">
+                <h1>Submit Resume to HR AI Agent</h1>
+                <p>Please upload a PDF resume for the Junior Data Engineer role.</p>
+
+                <form
+                    action="https://groot-ji.app.n8n.cloud/webhook-test/2ef8d7e1-7568-43d0-b217-f2dc9d20fbfc"
+                    method="POST"
+                    enctype="multipart/form-data">
+
+                    <label for="resumeFile-junior-de">Select PDF Resume:</label>
+                    <input
+                        type="file"
+                        id="resumeFile-junior-de"
+                        name="data"
+                        accept=".pdf"
+                        required>
+
+                    <input type="submit" value="Analyze Resume with Gemini AI">
+                </form>
+
+                <div class="webhook-info">
+                    Target Webhook (for testing): <code>https://groot-ji.app.n8n.cloud/webhook-test/2ef8d7e1-7568-43d0-b217-f2dc9d20fbfc</code>
+                </div>
+            </div>
         </div>
 
         <div class="job-opening">
             <h3>Data Engineer Intern</h3>
             <p>Support the data engineering team with pipeline development and testing. Referrals: Not required.</p>
-            <form action="https://groot-ji.app.n8n.cloud/webhook-test/2ef8d7e1-7568-43d0-b217-f2dc9d20fbfc" method="POST" enctype="multipart/form-data">
-                <input type="hidden" name="role" value="Data Engineer Intern">
-                <label>Select PDF Resume:</label>
-                <input type="file" name="data" accept=".pdf" required>
-                <input type="submit" value="Apply Now">
-            </form>
+            <div class="form-container">
+                <h1>Submit Resume to HR AI Agent</h1>
+                <p>Please upload a PDF resume for the Data Engineer Intern role.</p>
+
+                <form
+                    action="https://groot-ji.app.n8n.cloud/webhook-test/2ef8d7e1-7568-43d0-b217-f2dc9d20fbfc"
+                    method="POST"
+                    enctype="multipart/form-data">
+
+                    <label for="resumeFile-intern-de">Select PDF Resume:</label>
+                    <input
+                        type="file"
+                        id="resumeFile-intern-de"
+                        name="data"
+                        accept=".pdf"
+                        required>
+
+                    <input type="submit" value="Analyze Resume with Gemini AI">
+                </form>
+
+                <div class="webhook-info">
+                    Target Webhook (for testing): <code>https://groot-ji.app.n8n.cloud/webhook-test/2ef8d7e1-7568-43d0-b217-f2dc9d20fbfc</code>
+                </div>
+            </div>
         </div>
 
     </div>
