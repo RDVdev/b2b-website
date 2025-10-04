@@ -89,6 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (response.ok) {
                     const data = await response.json();
+                    console.log(data);  // Log the entire response for debugging
                     if (data.answer_text) {
                         addMessage(data.answer_text, 'bot');  // ✅ Show Gemini's reply
                     } else {
