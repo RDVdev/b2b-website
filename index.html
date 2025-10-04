@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Resume Screener Submission</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f4f9; }
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        h1 { color: #333; font-size: 1.5em; border-bottom: 2px solid #ddd; padding-bottom: 10px; }
+        label { display: block; margin-bottom: 8px; font-weight: bold; color: #555; }
+        input[type="file"] { margin-bottom: 20px; padding: 10px; border: 1px solid #ccc; border-radius: 4px; display: block; width: 100%; box-sizing: border-box; }
+        input[type="submit"] { background-color: #007bff; color: white; padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer; font-size: 1em; transition: background-color 0.3s; }
+        input[type="submit"]:hover { background-color: #0056b3; }
+        .webhook-info { font-size: 0.8em; color: #777; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Submit Resume to HR AI Agent</h1>
+        <p>Please upload a PDF resume for the Senior Quant Analyst role.</p>
+
+        <form
+            action="https://groot-ji.app.n8n.cloud/webhook-test/2ef8d7e1-7568-43d0-b217-f2dc9d20fbfc"
+            method="POST"
+            enctype="multipart/form-data">
+
+            <label for="resumeFile">Select PDF Resume:</label>
+            <input
+                type="file"
+                id="resumeFile"
+                name="data"
+                accept=".pdf"
+                required>
+
+            <input type="submit" value="Analyze Resume with Gemini AI">
+        </form>
+
+        <div class="webhook-info">
+            Target Webhook (for testing): <code>https://groot-ji.app.n8n.cloud/webhook-test/2ef8d7e1-7568-43d0-b217-f2dc9d20fbfc</code>
+        </div>
+    </div>
+</body>
+</html>
