@@ -20,21 +20,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Active link switching
-    window.addEventListener('scroll', () => {
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            if (pageYOffset >= sectionTop - 75) {
-                current = section.getAttribute('id');
-            }
-        });
-
-        navLinks.forEach(a => {
-            a.classList.remove('active');
-            if (a.getAttribute('href').substring(1) === current) {
-                a.classList.add('active');
-            }
-        });
+    const currentPage = window.location.pathname.split('/').pop();
+    navLinks.forEach(link => {
+        const linkPage = link.getAttribute('href').split('/').pop();
+        if (linkPage === currentPage || (currentPage === '' && linkPage === 'index.html')) {
+            link.classList.add('active');
+        }
     });
 
     // Hide header on scroll down
@@ -58,6 +49,58 @@ document.addEventListener('DOMContentLoaded', () => {
             themeSwitcher.textContent = '☀️';
         } else {
             themeSwitcher.textContent = '🌙';
+        }
+    });
+
+    // Chatbot functionality
+    const chatbotToggle = document.getElementById('chatbot-toggle');
+    const chatbotWindow = document.getElementById('chatbot-window');
+    const chatbotSend = document.getElementById('chatbot-send');
+    const chatbotInput = document.getElementById('chatbot-input');
+    const chatbotMessages = document.getElementById('chatbot-messages');
+    const webhookUrl = 'https://rdt556.app.n8n.cloud/webhook-test/policy-questions';
+
+    chatbotToggle.addEventListener('click', () => {
+        chatbotWindow.classList.toggle('hidden');
+    });
+
+    const addMessage = (text, sender) => {
+        const messageElement = document.createElement('div');
+        messageElement.classList.add('chatbot-message', `${sender}-message`);
+        messageElement.textContent = text;
+        chatbotMessages.appendChild(messageElement);
+        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+    };
+
+    chatbotSend.addEventListener('click', async () => {
+        const message = chatbotInput.value.trim();
+        if (message) {
+            addMessage(message, 'user');
+            chatbotInput.value = '';
+
+            try {
+                const response = await fetch(webhookUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ message }),
+                });
+
+                if (response.ok) {
+                    addMessage("Thanks for your message! We'll get back to you shortly.", 'bot');
+                } else {
+                    addMessage("Sorry, something went wrong. Please try again.", 'bot');
+                }
+            } catch (error) {
+                addMessage("Sorry, something went wrong. Please try again.", 'bot');
+            }
+        }
+    });
+
+    chatbotInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            chatbotSend.click();
         }
     });
 });
