@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const chatbotSend = document.getElementById('chatbot-send');
     const chatbotInput = document.getElementById('chatbot-input');
     const chatbotMessages = document.getElementById('chatbot-messages');
-    const webhookUrl = 'https://rdt556.app.n8n.cloud/webhook-test/policy-questions';
+    const webhookUrl = 'https://rdt556.app.n8n.cloud/webhook/policy-questions';
 
     chatbotToggle.addEventListener('click', () => {
         chatbotWindow.classList.toggle('hidden');
