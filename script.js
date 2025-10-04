@@ -89,16 +89,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (response.ok) {
                     const data = await response.json();
-
-                // 👇 Display Gemini's answer (from n8n)
-                    if (data.reply) {
-                        addMessage(data.reply, 'bot');
+                    if (data.answer_text) {
+                        addMessage(data.answer_text, 'bot');  // ✅ Show Gemini's reply
                     } else {
-                        addMessage("Got response but no reply field found.", 'bot');
+                        addMessage("Got a response, but no answer_text field found.", 'bot');
                     }
                 } else {
                     addMessage("Sorry, something went wrong. Please try again.", 'bot');
                 }
+
             } catch (error) {
                 addMessage("Sorry, something went wrong. Please try again.", 'bot');
             }
